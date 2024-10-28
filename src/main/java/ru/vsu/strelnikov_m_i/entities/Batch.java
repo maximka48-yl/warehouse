@@ -1,13 +1,14 @@
 package ru.vsu.strelnikov_m_i.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Date;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-public class Batch {
-    private int batch_id;
-    private Date batch_date;
+public class Batch implements Identifiable {
+    private int id;
+    private Date date;
 }

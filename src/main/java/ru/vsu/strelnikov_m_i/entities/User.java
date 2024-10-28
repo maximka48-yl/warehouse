@@ -1,15 +1,16 @@
 package ru.vsu.strelnikov_m_i.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-public class User {
+public class User implements Identifiable {
     private int id;
-    private String full_name;
+    private String fullName;
     private String email;
     private String phone;
     private String password;
-    private int role_id;
+    private int roleId;
 }

@@ -4,26 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="add lombok dependency and usage, replacing constructors with annotations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BatchInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/CityInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/EntryInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/ManufactureInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleTypeInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/UserInMemoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBatchRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ICityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IEntryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IManufactureRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IRoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleTypeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IUserRepository.java" afterDir="false" />
+    <list default="true" id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="remove enum errors">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Identifiable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BasicAbstractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBasicRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/EntryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/enums/EntryType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/RoleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/enums/RoleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BatchInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BatchInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/CityInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/CityInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/EntryInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/EntryInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/ManufactureInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/ManufactureInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleTypeInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleTypeInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/UserInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/UserInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBatchRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ICityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IEntryRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IManufactureRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IRoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IUserRepository.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -92,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730098360854</updated>
-      <workItem from="1730098361906" duration="12270000" />
+      <workItem from="1730098361906" duration="17724000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -118,7 +127,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730145590826</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create repository interfaces and its in-memory implementations">
+      <option name="closed" value="true" />
+      <created>1730150166075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730150166075</updated>
+    </task>
+    <task id="LOCAL-00005" summary="remove enum errors">
+      <option name="closed" value="true" />
+      <created>1730150340626</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730150340626</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +153,9 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="add all needed entities for in-memory database emulation" />
     <MESSAGE value="add lombok dependency and usage, replacing constructors with annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add lombok dependency and usage, replacing constructors with annotations" />
+    <MESSAGE value="create repository interfaces and its in-memory implementations" />
+    <MESSAGE value="remove enum errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove enum errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

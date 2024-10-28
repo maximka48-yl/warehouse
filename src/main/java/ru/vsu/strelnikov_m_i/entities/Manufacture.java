@@ -1,13 +1,14 @@
 package ru.vsu.strelnikov_m_i.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-public class Manufacture {
+public class Manufacture implements Identifiable {
     private int id;
     private String name;
-    private int city_id;
+    private int cityId;
 
 }

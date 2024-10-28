@@ -8,7 +8,7 @@ import java.sql.Date;
 
 @Data
 @AllArgsConstructor
-public class Entry {
+public class Entry implements Identifiable {
     private int id;
     private EntryType entryType;
     private int sampleId;

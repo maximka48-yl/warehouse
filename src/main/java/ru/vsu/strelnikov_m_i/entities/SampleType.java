@@ -1,12 +1,13 @@
 package ru.vsu.strelnikov_m_i.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-public class SampleType {
+public class SampleType implements Identifiable {
     private int id;
     private String name;
-    private int shelf_life;
+    private int shelfLife;
 }
