@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/EntryType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/RoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" afterDir="false" />
+    <list default="true" id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="add all needed entities for in-memory database emulation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +31,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
@@ -74,7 +75,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730098360854</updated>
-      <workItem from="1730098361906" duration="6087000" />
+      <workItem from="1730098361906" duration="8728000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -84,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730098722292</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add all needed entities for in-memory database emulation">
+      <option name="closed" value="true" />
+      <created>1730135889317</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730135889317</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,7 +101,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="add all needed entities for in-memory database emulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add all needed entities for in-memory database emulation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
