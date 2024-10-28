@@ -2,6 +2,7 @@ package ru.vsu.strelnikov_m_i.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import ru.vsu.strelnikov_m_i.enums.EntryType;
 
 import java.sql.Date;
 
