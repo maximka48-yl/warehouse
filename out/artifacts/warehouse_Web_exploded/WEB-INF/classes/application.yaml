@@ -1,0 +1,5 @@
+db:
+    url: jdbc:postgresql://localhost:5432/warehouse
+    username: postgres
+    password: 1234
+    driverClassName: org.postgresql.Driver
