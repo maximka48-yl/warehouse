@@ -6,9 +6,8 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Manufacture implements Identifiable {
+public class Manufacture {
     private int id;
     private String name;
-    private int cityId;
-
+    private String cityName;
 }

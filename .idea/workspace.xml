@@ -1,38 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="archive" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="remove enum errors">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Identifiable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BasicAbstractRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBasicRepository.java" afterDir="false" />
+    <list default="true" id="4fb6b6b1-9acf-4281-bcbf-816054f98438" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/archive.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/warehouse_Web_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/Command.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/AddBatchConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/AddEntryConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/DeleteBatchConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/DeleteEntryConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/UpdateBatchConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/UpdateEntryConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/ViewBatchConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/commands/console/ViewEntryConsoleCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/config/DatabaseConnectionConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/console/ConsoleInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/console/ConsoleView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/console/Creator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/console/ErrorConsuming.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/context/AppContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/enums/ResponseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/exceptions/AccessDeniedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/exceptions/DatabaseConnectionFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/exceptions/NotEnoughAttributes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/exceptions/ObjectNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/exceptions/WrongFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/factories/CommandFactoryConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/factories/Factory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/BatchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/CityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/EntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/ManufactureRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/SampleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/SampleTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/database_connected/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBatchRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ICityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IEntryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IManufactureRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/BatchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/EntryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/ManufactureService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/SampleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/SampleTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/AuthServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/BatchServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/CityServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/EntryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/IndexServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/ManufactureServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/SampleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/SampleTypeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/servlets/UserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/postgresql-42.7.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/auth.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/batch.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/city.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/entry.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/manufacture.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/navbarAdmin.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/navbarManager.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/sample.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/sampleType.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/jsps/users.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Batch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Entry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Identifiable.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Manufacture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Role.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/Sample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/SampleType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BasicAbstractRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BatchInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/BatchInMemoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/CityInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/CityInMemoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/EntryInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/EntryInMemoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/ManufactureInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/ManufactureInMemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/RoleInMemoryRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleInMemoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleTypeInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/SampleTypeInMemoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/UserInMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/in_memory/UserInMemoryRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBatchRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ICityRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IEntryRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IManufactureRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IRoleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/ISampleTypeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IUserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/vsu/strelnikov_m_i/repositories/interfaces/IBasicRepository.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,48 +116,262 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
+        <option value="Jsp File" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
-  <component name="ProjectId" id="2o3VgdwcWI7CrTGGW2d6Yj4UItH" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2qXno9FjVVaeosyH9zyBDMlVZUK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ConsoleView.executor": "Run",
+    "Application.Main.executor": "Run",
+    "JavaScript Debug.navbarAdmin.jsp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.1.33.executor": "Debug",
+    "Tomcat Server.Tomcat 11.0.2.executor": "Debug",
+    "Tomcat Server.navbarAdmin.jsp.executor": "Debug",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/VSU/Java/ThirdCourse/Employment",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/strem/IdeaProjects/warehouse/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15527344",
+    "project.structure.side.proportion": "0.24537037",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\strem\IdeaProjects\warehouse\src\main\java\ru\vsu\strelnikov_m_i\repositories\interfaces" />
-      <recent name="C:\Users\strem\IdeaProjects\warehouse\src\main\java\ru\vsu\strelnikov_m_i\repositories" />
-      <recent name="C:\Users\strem\IdeaProjects\warehouse\src\main\java\ru\vsu\strelnikov_m_i\enums" />
-    </key>
+  <component name="RunManager" selected="Application.ConsoleView">
+    <configuration name="ConsoleView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.vsu.strelnikov_m_i.console.ConsoleView" />
+      <module name="warehouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.vsu.strelnikov_m_i.console.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="navbarAdmin.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/warehouse_Web_exploded/jsps/navbarAdmin.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="Tomcat 10.1.33" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.33" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="archive">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="69d30c9a-f040-4046-9b3d-adf7501f4cd7" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53994" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="archive" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Tomcat 11.0.2" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 11.0.2" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="warehouse:Web exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/warehouse_Web_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="67e7a9f0-0b03-4108-982a-874b81c43e0a" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60648" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="warehouse:Web exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ConsoleView" />
+      <item itemvalue="JavaScript Debug.navbarAdmin.jsp" />
+      <item itemvalue="Tomcat Server.Tomcat 10.1.33" />
+      <item itemvalue="Tomcat Server.Tomcat 11.0.2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConsoleView" />
+        <item itemvalue="JavaScript Debug.navbarAdmin.jsp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -96,76 +384,23 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c67f7925-6528-4a80-9d28-9640213a4d16" name="Changes" comment="" />
-      <created>1730098360854</created>
+      <changelist id="4fb6b6b1-9acf-4281-bcbf-816054f98438" name="Changes" comment="" />
+      <created>1734817961010</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1730098360854</updated>
-      <workItem from="1730098361906" duration="17724000" />
+      <updated>1734817961010</updated>
+      <workItem from="1734817962447" duration="11494000" />
+      <workItem from="1734918404713" duration="22873000" />
+      <workItem from="1734958252933" duration="14597000" />
+      <workItem from="1734973867105" duration="6472000" />
+      <workItem from="1735047578124" duration="18594000" />
+      <workItem from="1735113340486" duration="416000" />
+      <workItem from="1735114531052" duration="163000" />
+      <workItem from="1735120811212" duration="9482000" />
     </task>
-    <task id="LOCAL-00001" summary="first commit">
-      <option name="closed" value="true" />
-      <created>1730098722292</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1730098722292</updated>
-    </task>
-    <task id="LOCAL-00002" summary="add all needed entities for in-memory database emulation">
-      <option name="closed" value="true" />
-      <created>1730135889317</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1730135889317</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add lombok dependency and usage, replacing constructors with annotations">
-      <option name="closed" value="true" />
-      <created>1730145590826</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1730145590826</updated>
-    </task>
-    <task id="LOCAL-00004" summary="create repository interfaces and its in-memory implementations">
-      <option name="closed" value="true" />
-      <created>1730150166075</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1730150166075</updated>
-    </task>
-    <task id="LOCAL-00005" summary="remove enum errors">
-      <option name="closed" value="true" />
-      <created>1730150340626</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1730150340626</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="first commit" />
-    <MESSAGE value="add all needed entities for in-memory database emulation" />
-    <MESSAGE value="add lombok dependency and usage, replacing constructors with annotations" />
-    <MESSAGE value="create repository interfaces and its in-memory implementations" />
-    <MESSAGE value="remove enum errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove enum errors" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

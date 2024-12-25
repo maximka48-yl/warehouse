@@ -8,7 +8,8 @@ import java.sql.Date;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Batch implements Identifiable {
+public class Batch {
     private int id;
     private Date date;
+    private String sampleName;
 }

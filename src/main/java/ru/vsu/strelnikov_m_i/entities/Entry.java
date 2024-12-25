@@ -1,17 +1,17 @@
 package ru.vsu.strelnikov_m_i.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 import ru.vsu.strelnikov_m_i.enums.EntryType;
 
 import java.sql.Date;
 
-@Data
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
-public class Entry implements Identifiable {
+public class Entry {
     private int id;
     private EntryType entryType;
-    private int sampleId;
     private int batchId;
     private int userId;
     private Date date;

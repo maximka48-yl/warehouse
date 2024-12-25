@@ -6,7 +6,7 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
-public class City implements Identifiable {
+public class City {
     private int id;
     private String name;
 }

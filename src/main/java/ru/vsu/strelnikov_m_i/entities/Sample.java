@@ -6,10 +6,9 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
-public class Sample implements Identifiable {
+public class Sample {
     private int id;
     private String name;
-    private int sampleTypeId;
-    private int manufactureId;
-
+    private String sampleTypeName;
+    private String manufactureName;
 }

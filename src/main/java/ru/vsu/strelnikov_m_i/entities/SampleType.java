@@ -6,8 +6,7 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
-public class SampleType implements Identifiable {
+public class SampleType {
     private int id;
     private String name;
-    private int shelfLife;
 }
