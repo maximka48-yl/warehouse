@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import ru.vsu.strelnikov_m_i.entities.User;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.UserRepository;
 import ru.vsu.strelnikov_m_i.services.AuthService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 
@@ -36,7 +37,7 @@ public class AuthServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            User user = authService.authorization(Integer.parseInt(req.getParameter("username")), req.getParameter("password"));
+            User user = authService.authorization(Integer.parseInt(WebUtils.sanitizeOutput(req.getParameter("username"))), WebUtils.sanitizeOutput(req.getParameter("password")));
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
             resp.sendRedirect(req.getContextPath() + "/entry");

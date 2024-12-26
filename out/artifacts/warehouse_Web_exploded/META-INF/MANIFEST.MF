@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
-Built-By: kotvo
-Build-Jdk: Oracle OpenJDK 21.0.1
+Built-By: strem
+Build-Jdk: Oracle OpenJDK 21.0.2
 

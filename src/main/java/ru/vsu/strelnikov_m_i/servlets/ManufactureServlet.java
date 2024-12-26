@@ -15,6 +15,7 @@ import ru.vsu.strelnikov_m_i.repositories.database_connected.CityRepository;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.ManufactureRepository;
 import ru.vsu.strelnikov_m_i.services.CityService;
 import ru.vsu.strelnikov_m_i.services.ManufactureService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -51,10 +52,10 @@ public class ManufactureServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String name = req.getParameter("addName");
-            String cityName = req.getParameter("addCityName");
+            String name = WebUtils.sanitizeOutput(req.getParameter("addName"));
+            String cityName = WebUtils.sanitizeOutput(req.getParameter("addCityName"));
             try {
                 manufactureService.add(name, cityName);
             } catch (RuntimeException e) {
@@ -62,9 +63,9 @@ public class ManufactureServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String id = req.getParameter("updateId");
-            String name = req.getParameter("updateName");
-            String cityName = req.getParameter("updateCityName");
+            String id = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String name = WebUtils.sanitizeOutput(req.getParameter("updateName"));
+            String cityName = WebUtils.sanitizeOutput(req.getParameter("updateCityName"));
             try {
                 manufactureService.update(Integer.parseInt(id), name, cityName);
             } catch (RuntimeException e) {
@@ -72,7 +73,7 @@ public class ManufactureServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 manufactureService.delete(Integer.parseInt(id));
             } catch (RuntimeException e) {

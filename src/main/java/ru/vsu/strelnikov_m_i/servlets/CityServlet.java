@@ -12,6 +12,7 @@ import ru.vsu.strelnikov_m_i.entities.User;
 import ru.vsu.strelnikov_m_i.enums.RoleType;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.CityRepository;
 import ru.vsu.strelnikov_m_i.services.CityService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -43,9 +44,9 @@ public class CityServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String cityName = req.getParameter("addCityName");
+            String cityName = WebUtils.sanitizeOutput(req.getParameter("addCityName"));
             try {
                 cityService.add(cityName);
             } catch (RuntimeException e) {
@@ -53,8 +54,8 @@ public class CityServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String cityId = req.getParameter("updateId");
-            String cityName = req.getParameter("updateCityName");
+            String cityId = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String cityName = WebUtils.sanitizeOutput(req.getParameter("updateCityName"));
             try {
                 cityService.update(Integer.parseInt(cityId), cityName);
             } catch (RuntimeException e) {
@@ -62,7 +63,7 @@ public class CityServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 cityService.delete(Integer.parseInt(id));
             } catch (RuntimeException e) {

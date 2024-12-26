@@ -23,15 +23,7 @@ import java.util.Scanner;
 
 @Setter
 public class ConsoleView implements ErrorConsuming {
-    //todo: think about userId for creating new entities
     private ConsoleInput input;
-
-    //todo: generalize addWindow
-//    private ResponseType openAddEntryWindow() {
-//        System.out.println("Enter entry's properties:\nentryType\tsample\tbatch\tdate\tamount\nEntryType\tString\tint \tDate\tint");
-//        System.out.println("To exit the addition operation enter: exit");
-//        return input.inputEntry();
-//    }
 
     public void logIn() {
         System.out.println("Login");
@@ -47,11 +39,9 @@ public class ConsoleView implements ErrorConsuming {
         showStartWindow();
     }
 
-    //todo: make it do its purpose - call user-chosen methods
     private void showStartWindow() {
         System.out.println(AppContext.getUser().toString());
 
-        //todo: role-depending command input
         ResponseType response;
         do {
             System.out.println("List of available commands:");

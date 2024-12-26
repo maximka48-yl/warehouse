@@ -13,6 +13,7 @@ import ru.vsu.strelnikov_m_i.repositories.database_connected.BatchRepository;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.SampleRepository;
 import ru.vsu.strelnikov_m_i.services.BatchService;
 import ru.vsu.strelnikov_m_i.services.SampleService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -46,10 +47,10 @@ public class BatchServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String date = req.getParameter("addDate");
-            String sampleName = req.getParameter("addSampleName");
+            String date = WebUtils.sanitizeOutput(req.getParameter("addDate"));
+            String sampleName = WebUtils.sanitizeOutput(req.getParameter("addSampleName"));
             try {
                 batchService.add(Date.valueOf(date), sampleName);
             } catch (RuntimeException e) {
@@ -57,9 +58,9 @@ public class BatchServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String id = req.getParameter("updateId");
-            String date = req.getParameter("updateDate");
-            String sampleName = req.getParameter("updateSampleName");
+            String id = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String date = WebUtils.sanitizeOutput(req.getParameter("updateDate"));
+            String sampleName = WebUtils.sanitizeOutput(req.getParameter("updateSampleName"));
             try {
                 batchService.update(Integer.parseInt(id), Date.valueOf(date), sampleName);
             } catch (RuntimeException e) {
@@ -67,7 +68,7 @@ public class BatchServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 batchService.delete(Integer.parseInt(id));
             } catch (RuntimeException e) {

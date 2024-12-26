@@ -11,6 +11,7 @@ import ru.vsu.strelnikov_m_i.entities.User;
 import ru.vsu.strelnikov_m_i.enums.RoleType;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.UserRepository;
 import ru.vsu.strelnikov_m_i.services.UserService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 
@@ -41,13 +42,13 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String userFullName = req.getParameter("addFullName");
-            String userEmail = req.getParameter("addEmail");
-            String userPassword = req.getParameter("addPassword");
-            String userPhone = req.getParameter("addPhoneNumber");
-            String userRoleType = req.getParameter("addRoleType");
+            String userFullName = WebUtils.sanitizeOutput(req.getParameter("addFullName"));
+            String userEmail = WebUtils.sanitizeOutput(req.getParameter("addEmail"));
+            String userPassword = WebUtils.sanitizeOutput(req.getParameter("addPassword"));
+            String userPhone = WebUtils.sanitizeOutput(req.getParameter("addPhoneNumber"));
+            String userRoleType = WebUtils.sanitizeOutput(req.getParameter("addRoleType"));
             try {
                 userService.add(userFullName, userPassword, RoleType.valueOf(userRoleType), userEmail, userPhone);
             } catch (RuntimeException e) {
@@ -55,12 +56,12 @@ public class UserServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String userId = req.getParameter("updateId");
-            String userFullName = req.getParameter("updateFullName");
-            String userEmail = req.getParameter("updateEmail");
-            String userPassword = req.getParameter("updatePassword");
-            String userPhone = req.getParameter("updatePhoneNumber");
-            String userRoleType = req.getParameter("updateRoleType");
+            String userId = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String userFullName = WebUtils.sanitizeOutput(req.getParameter("updateFullName"));
+            String userEmail = WebUtils.sanitizeOutput(req.getParameter("updateEmail"));
+            String userPassword = WebUtils.sanitizeOutput(req.getParameter("updatePassword"));
+            String userPhone = WebUtils.sanitizeOutput(req.getParameter("updatePhoneNumber"));
+            String userRoleType = WebUtils.sanitizeOutput(req.getParameter("updateRoleType"));
             try {
                 userService.update(Integer.parseInt(userId), userFullName, userPassword, RoleType.valueOf(userRoleType), userEmail, userPhone);
             } catch (RuntimeException e) {
@@ -68,7 +69,7 @@ public class UserServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 userService.delete(Integer.parseInt(id), ((User) req.getSession().getAttribute("user")).getId());
             } catch (RuntimeException e) {

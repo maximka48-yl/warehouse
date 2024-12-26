@@ -12,6 +12,7 @@ import ru.vsu.strelnikov_m_i.entities.User;
 import ru.vsu.strelnikov_m_i.enums.RoleType;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.SampleTypeRepository;
 import ru.vsu.strelnikov_m_i.services.SampleTypeService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -44,9 +45,9 @@ public class SampleTypeServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String typeName = req.getParameter("addName");
+            String typeName = WebUtils.sanitizeOutput(req.getParameter("addName"));
             try {
                 sampleTypeService.add(typeName);
             } catch (RuntimeException e) {
@@ -54,8 +55,8 @@ public class SampleTypeServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String typeId = req.getParameter("updateId");
-            String typeName = req.getParameter("updateName");
+            String typeId = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String typeName = WebUtils.sanitizeOutput(req.getParameter("updateName"));
             try {
                 sampleTypeService.update(Integer.parseInt(typeId), typeName);
             } catch (RuntimeException e) {
@@ -63,7 +64,7 @@ public class SampleTypeServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String typeId = req.getParameter("deleteId");
+            String typeId = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 sampleTypeService.delete(Integer.parseInt(typeId));
             } catch (RuntimeException e) {

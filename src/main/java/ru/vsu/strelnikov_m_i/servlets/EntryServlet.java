@@ -15,6 +15,7 @@ import ru.vsu.strelnikov_m_i.repositories.database_connected.BatchRepository;
 import ru.vsu.strelnikov_m_i.repositories.database_connected.EntryRepository;
 import ru.vsu.strelnikov_m_i.services.BatchService;
 import ru.vsu.strelnikov_m_i.services.EntryService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -63,12 +64,12 @@ public class EntryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute("user");
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String entryType = req.getParameter("addEntryType");
-            String batch = req.getParameter("addBatch");
-            String date = req.getParameter("addDate");
-            String amount = req.getParameter("addAmount");
+            String entryType = WebUtils.sanitizeOutput(req.getParameter("addEntryType"));
+            String batch = WebUtils.sanitizeOutput(req.getParameter("addBatch"));
+            String date = WebUtils.sanitizeOutput(req.getParameter("addDate"));
+            String amount = WebUtils.sanitizeOutput(req.getParameter("addAmount"));
             try {
                 entryService.add(EntryType.valueOf(entryType), Integer.parseInt(batch), Date.valueOf(date), Integer.parseInt(amount), user);
             } catch (RuntimeException e) {
@@ -76,11 +77,11 @@ public class EntryServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String id = req.getParameter("updateId");
-            String entryType = req.getParameter("updateEntryType");
-            String batch = req.getParameter("updateBatch");
-            String date = req.getParameter("updateDate");
-            String amount = req.getParameter("updateAmount");
+            String id = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String entryType = WebUtils.sanitizeOutput(req.getParameter("updateEntryType"));
+            String batch = WebUtils.sanitizeOutput(req.getParameter("updateBatch"));
+            String date = WebUtils.sanitizeOutput(req.getParameter("updateDate"));
+            String amount = WebUtils.sanitizeOutput(req.getParameter("updateAmount"));
             try {
                 entryService.update(Integer.parseInt(id), EntryType.valueOf(entryType), Integer.parseInt(batch), Date.valueOf(date), Integer.parseInt(amount), user);
             } catch (RuntimeException e) {
@@ -88,7 +89,7 @@ public class EntryServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 entryService.delete(Integer.parseInt(id), user);
             } catch (RuntimeException e) {

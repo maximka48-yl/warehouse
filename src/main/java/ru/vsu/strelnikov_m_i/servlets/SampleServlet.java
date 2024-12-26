@@ -17,6 +17,7 @@ import ru.vsu.strelnikov_m_i.repositories.database_connected.SampleTypeRepositor
 import ru.vsu.strelnikov_m_i.services.ManufactureService;
 import ru.vsu.strelnikov_m_i.services.SampleService;
 import ru.vsu.strelnikov_m_i.services.SampleTypeService;
+import ru.vsu.strelnikov_m_i.utils.WebUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -54,11 +55,11 @@ public class SampleServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String action = req.getParameter("action");
+        String action = WebUtils.sanitizeOutput(req.getParameter("action"));
         if (action.equals("add")) {
-            String name = req.getParameter("addName");
-            String sampleTypeName = req.getParameter("addSampleTypeName");
-            String manufactureName = req.getParameter("addManufactureName");
+            String name = WebUtils.sanitizeOutput(req.getParameter("addName"));
+            String sampleTypeName = WebUtils.sanitizeOutput(req.getParameter("addSampleTypeName"));
+            String manufactureName = WebUtils.sanitizeOutput(req.getParameter("addManufactureName"));
             try {
                 sampleService.add(name, sampleTypeName, manufactureName);
             } catch (RuntimeException e) {
@@ -66,10 +67,10 @@ public class SampleServlet extends HttpServlet {
             }
         }
         if (action.equals("update")) {
-            String id = req.getParameter("updateId");
-            String name = req.getParameter("updateName");
-            String sampleTypeName = req.getParameter("updateSampleTypeName");
-            String manufactureName = req.getParameter("updateManufactureName");
+            String id = WebUtils.sanitizeOutput(req.getParameter("updateId"));
+            String name = WebUtils.sanitizeOutput(req.getParameter("updateName"));
+            String sampleTypeName = WebUtils.sanitizeOutput(req.getParameter("updateSampleTypeName"));
+            String manufactureName = WebUtils.sanitizeOutput(req.getParameter("updateManufactureName"));
             try {
                 sampleService.update(Integer.parseInt(id), name, sampleTypeName, manufactureName);
             } catch (RuntimeException e) {
@@ -77,7 +78,7 @@ public class SampleServlet extends HttpServlet {
             }
         }
         if (action.equals("delete")) {
-            String id = req.getParameter("deleteId");
+            String id = WebUtils.sanitizeOutput(req.getParameter("deleteId"));
             try {
                 sampleService.delete(Integer.parseInt(id));
             } catch (RuntimeException e) {
