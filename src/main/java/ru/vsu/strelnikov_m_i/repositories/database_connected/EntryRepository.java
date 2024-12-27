@@ -5,6 +5,7 @@ import ru.vsu.strelnikov_m_i.entities.Entry;
 import ru.vsu.strelnikov_m_i.enums.EntryType;
 import ru.vsu.strelnikov_m_i.exceptions.DatabaseConnectionFailedException;
 import ru.vsu.strelnikov_m_i.exceptions.ObjectNotFoundException;
+import ru.vsu.strelnikov_m_i.repositories.filters.EntryFilter;
 import ru.vsu.strelnikov_m_i.repositories.interfaces.IEntryRepository;
 
 import java.sql.Connection;
@@ -97,30 +98,145 @@ public class EntryRepository implements IEntryRepository<Entry> {
     }
 
     @Override
-    public List<Entry> getAll() {
-        try {
-            Connection connection = DatabaseConnectionConfig.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from ENTRY order by id");
+    public List<Entry> getAll(int rowsOnPage, int currentPage, EntryFilter entryFilter) {
+        StringBuilder query = new StringBuilder("SELECT * FROM ENTRY WHERE 1=1");
+        List<Object> params = prepareStatementForAdmin(entryFilter, query);
+
+        query.append(" ORDER BY id LIMIT ? OFFSET ?");
+        params.add(rowsOnPage);
+        params.add((currentPage - 1) * rowsOnPage);
+
+        try (Connection connection = DatabaseConnectionConfig.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query.toString())) {
+
+            for (int i = 0; i < params.size(); i++) {
+                statement.setObject(i + 1, params.get(i));
+            }
+
             return parseEntryFromResultSet(statement.executeQuery());
         } catch (SQLException e) {
             throw new DatabaseConnectionFailedException("Could not get entries from database: " + e.getMessage());
+        }
+    }
+
+
+    @Override
+    public List<Entry> getByAuthor(int userId, int rowsOnPage, int currentPage, EntryFilter entryFilter) throws ObjectNotFoundException {
+        StringBuilder query = new StringBuilder("SELECT * FROM ENTRY WHERE user_id = ?");
+        List<Object> params = prepareStatmentForManager(userId, entryFilter, query);
+
+        query.append(" ORDER BY id LIMIT ? OFFSET ?");
+        params.add(rowsOnPage);
+        params.add((currentPage - 1) * rowsOnPage);
+
+        try (Connection connection = DatabaseConnectionConfig.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query.toString())) {
+
+            // Установка параметров в PreparedStatement
+            for (int i = 0; i < params.size(); i++) {
+                statement.setObject(i + 1, params.get(i));
+            }
+
+            ResultSet resultSet = statement.executeQuery();
+            List<Entry> entries = parseEntryFromResultSet(resultSet);
+            if (entries.isEmpty()) {
+                throw new ObjectNotFoundException("No entries found for the given author and filters.");
+            }
+            return entries;
+        } catch (SQLException e) {
+            throw new DatabaseConnectionFailedException("Could not get entries by author from database: " + e.getMessage());
         }
     }
 
     @Override
-    public List<Entry> getByAuthor(int userId) throws ObjectNotFoundException {
-        try {
-            Connection connection = DatabaseConnectionConfig.getConnection();
-            PreparedStatement statement = connection.prepareStatement("select * from ENTRY where user_id = ? order by id");
-            statement.setInt(1, userId);
-            return parseEntryFromResultSet(statement.executeQuery());
+    public int getTotalRows(EntryFilter entryFilter) {
+        StringBuilder query = new StringBuilder("SELECT COUNT(id) FROM ENTRY WHERE 1=1");
+        List<Object> params = prepareStatementForAdmin(entryFilter, query);
+
+        try (Connection connection = DatabaseConnectionConfig.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query.toString())) {
+
+            for (int i = 0; i < params.size(); i++) {
+                statement.setObject(i + 1, params.get(i));
+            }
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                return 0;
+            }
         } catch (SQLException e) {
-            throw new DatabaseConnectionFailedException("Could not get entries from database: " + e.getMessage());
+            throw new DatabaseConnectionFailedException("Could not get total rows from database: " + e.getMessage());
         }
     }
 
+    private List<Object> prepareStatementForAdmin(EntryFilter entryFilter, StringBuilder query) {
+        List<Object> params = new ArrayList<>();
 
-    //TODO: next()
+        if (entryFilter.getEntryType() != null) {
+            query.append(" AND entry_type = ?::entrytype");
+            params.add(entryFilter.getEntryType().name());
+        }
+        if (entryFilter.getBatchId() != null) {
+            query.append(" AND batch_id = ?");
+            params.add(entryFilter.getBatchId());
+        }
+        if (entryFilter.getUserId() != null) {
+            query.append(" AND user_id = ?");
+            params.add(entryFilter.getUserId());
+        }
+        if (entryFilter.getDate() != null) {
+            query.append(" AND date = ?");
+            params.add(entryFilter.getDate());
+        }
+        return params;
+    }
+
+    @Override
+    public int getTotalRowsByAuthor(int userId, EntryFilter entryFilter) throws ObjectNotFoundException {
+        StringBuilder query = new StringBuilder("SELECT COUNT(id) FROM ENTRY WHERE user_id = ?");
+        List<Object> params = prepareStatmentForManager(userId, entryFilter, query);
+
+        try (Connection connection = DatabaseConnectionConfig.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query.toString())) {
+
+            // Установка параметров в PreparedStatement
+            for (int i = 0; i < params.size(); i++) {
+                statement.setObject(i + 1, params.get(i));
+            }
+
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            } else {
+                throw new ObjectNotFoundException("No entries found for the given author and filters.");
+            }
+        } catch (SQLException e) {
+            throw new DatabaseConnectionFailedException("Could not get total rows by author from database: " + e.getMessage());
+        }
+    }
+
+    private List<Object> prepareStatmentForManager(int userId, EntryFilter entryFilter, StringBuilder query) {
+        List<Object> params = new ArrayList<>();
+        params.add(userId);
+
+        if (entryFilter.getEntryType() != null) {
+            query.append(" AND entry_type = ?::entrytype");
+            params.add(entryFilter.getEntryType().name());
+        }
+        if (entryFilter.getBatchId() != null) {
+            query.append(" AND batch_id = ?");
+            params.add(entryFilter.getBatchId());
+        }
+        if (entryFilter.getDate() != null) {
+            query.append(" AND date = ?");
+            params.add(entryFilter.getDate());
+        }
+        return params;
+    }
+
+
     private List<Entry> parseEntryFromResultSet(ResultSet resultSet) throws SQLException {
         List<Entry> entries = new ArrayList<>();
         while (resultSet.next()) {
@@ -130,7 +246,7 @@ public class EntryRepository implements IEntryRepository<Entry> {
                     resultSet.getInt(4),
                     resultSet.getDate(5),
                     resultSet.getInt(6)
-                    ));
+            ));
         }
         return entries;
     }

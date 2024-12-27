@@ -12,7 +12,7 @@ public class ViewEntryConsoleCommand implements Command {
 
     @Override
     public ResponseType execute() {
-        System.out.println(entryService.getByAuthor(AppContext.getUser().getId()).toString());
+        //System.out.println(entryService.getByAuthor(AppContext.getUser().getId(), 0).toString());
         return ResponseType.OK;
     }
 }

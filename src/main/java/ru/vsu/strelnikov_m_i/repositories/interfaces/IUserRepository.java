@@ -16,4 +16,6 @@ public interface IUserRepository <T extends User>{
     Optional<T> get(int id) throws ObjectNotFoundException;
 
     List<T> getAll();
+
+    List<Integer> getAllIds();
 }

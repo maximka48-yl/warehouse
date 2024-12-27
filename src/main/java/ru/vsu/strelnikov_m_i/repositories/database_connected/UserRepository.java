@@ -97,6 +97,22 @@ public class UserRepository implements IUserRepository<User> {
         }
     }
 
+    @Override
+    public List<Integer> getAllIds() {
+        try {
+            Connection connection = DatabaseConnectionConfig.getConnection();
+            PreparedStatement statement = connection.prepareStatement("select * from users order by id");
+            ResultSet resultSet = statement.executeQuery();
+            List<Integer> list = new ArrayList<>();
+            while (resultSet.next()) {
+                list.add(resultSet.getInt(1));
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new DatabaseConnectionFailedException("Could not get users from database: " + e.getMessage());
+        }
+    }
+
     private List<User> parseUserFromResultSet(ResultSet resultSet) throws SQLException {
         List<User> entries = new ArrayList<>();
         while (resultSet.next()) {

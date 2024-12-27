@@ -31,7 +31,7 @@ public class AuthServlet extends HttpServlet {
             req.getRequestDispatcher("jsps/auth.jsp").forward(req, resp);
             return;
         }
-        resp.sendRedirect(req.getContextPath() + "/entry");
+        resp.sendRedirect(req.getContextPath() + "/entry?currentPage=1");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class AuthServlet extends HttpServlet {
             User user = authService.authorization(Integer.parseInt(WebUtils.sanitizeOutput(req.getParameter("username"))), WebUtils.sanitizeOutput(req.getParameter("password")));
             HttpSession session = req.getSession();
             session.setAttribute("user", user);
-            resp.sendRedirect(req.getContextPath() + "/entry");
+            resp.sendRedirect(req.getContextPath() + "/entry?currentPage=1");
         } catch (RuntimeException e) {
             req.getSession().setAttribute("error", e.getMessage());
             req.getRequestDispatcher("jsps/auth.jsp").forward(req, resp);

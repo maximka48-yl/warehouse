@@ -43,4 +43,8 @@ public class UserService {
         return userRepository.getAll();
     }
 
+    public List<Integer> getAllIds() {
+        return userRepository.getAllIds();
+    }
+
 }

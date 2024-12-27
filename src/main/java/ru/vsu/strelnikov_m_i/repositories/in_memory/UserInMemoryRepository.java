@@ -50,4 +50,9 @@ public class UserInMemoryRepository implements IUserRepository<User> {
     public List<User> getAll() {
         return null;
     }
+
+    @Override
+    public List<Integer> getAllIds() {
+        return List.of();
+    }
 }

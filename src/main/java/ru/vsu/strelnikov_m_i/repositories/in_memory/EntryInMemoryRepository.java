@@ -2,6 +2,7 @@ package ru.vsu.strelnikov_m_i.repositories.in_memory;
 
 import ru.vsu.strelnikov_m_i.entities.Entry;
 import ru.vsu.strelnikov_m_i.exceptions.ObjectNotFoundException;
+import ru.vsu.strelnikov_m_i.repositories.filters.EntryFilter;
 import ru.vsu.strelnikov_m_i.repositories.interfaces.IEntryRepository;
 
 import java.util.ArrayList;
@@ -52,18 +53,22 @@ public class EntryInMemoryRepository implements IEntryRepository<Entry> {
     }
 
     @Override
-    public List<Entry> getAll() {
-        return database;
+    public List<Entry> getAll(int rowsOnPage, int currentPage, EntryFilter entryFilter) throws ObjectNotFoundException {
+        return List.of();
     }
 
     @Override
-    public List<Entry> getByAuthor(int authorId) throws ObjectNotFoundException {
-        List<Entry> result = new ArrayList<>();
-        for (Entry e : database) {
-            if (e.getUserId() == authorId) {
-                result.add(e);
-            }
-        }
-        return result;
+    public List<Entry> getByAuthor(int userId, int rowsOnPage, int currentPage, EntryFilter entryFilter) throws ObjectNotFoundException {
+        return List.of();
+    }
+
+    @Override
+    public int getTotalRows(EntryFilter entryFilter) {
+        return 0;
+    }
+
+    @Override
+    public int getTotalRowsByAuthor(int userId, EntryFilter entryFilter) throws ObjectNotFoundException {
+        return 0;
     }
 }

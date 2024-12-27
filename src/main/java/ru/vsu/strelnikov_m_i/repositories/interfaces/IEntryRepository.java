@@ -2,6 +2,7 @@ package ru.vsu.strelnikov_m_i.repositories.interfaces;
 
 import ru.vsu.strelnikov_m_i.entities.Entry;
 import ru.vsu.strelnikov_m_i.exceptions.ObjectNotFoundException;
+import ru.vsu.strelnikov_m_i.repositories.filters.EntryFilter;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +18,11 @@ public interface IEntryRepository<T extends Entry> {
 
     Optional<Entry> get(int id) throws ObjectNotFoundException;
 
-    List<T> getAll();
+    List<T> getAll(int rowsOnPage, int currentPage, EntryFilter entryFilter) throws ObjectNotFoundException;
 
-    List<T> getByAuthor(int authorId) throws ObjectNotFoundException;
+    List<Entry> getByAuthor(int userId, int rowsOnPage, int currentPage, EntryFilter entryFilter) throws ObjectNotFoundException;
+
+    int getTotalRows(EntryFilter entryFilter);
+
+    int getTotalRowsByAuthor(int userId, EntryFilter entryFilter) throws ObjectNotFoundException;
 }

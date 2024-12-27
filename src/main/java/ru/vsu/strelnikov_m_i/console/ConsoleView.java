@@ -67,7 +67,7 @@ public class ConsoleView implements ErrorConsuming {
 
         userInMemoryRepository.add(new User(0, "Вася Пупкин", "123".hashCode(), RoleType.MANAGER, "mylo@soap.com", "454545"));
         repository.add(new Entry(0, EntryType.RECEIVED, 0, 1, new Date(0),1));
-        System.out.println(repository.getAll());
+        //System.out.println(repository.getAll());
         batchRepository.add(new Batch(0, new Date(0), "Конфетка"));
 
         AuthService authService = new AuthService(userInMemoryRepository);
